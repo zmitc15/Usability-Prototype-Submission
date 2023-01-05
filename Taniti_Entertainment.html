@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+  <link rel="stylesheet" href="Taniti_Entertainment.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Taniti Travel</title>
+</head>
+
+<body>
+  <div class="main">
+
+    <div class="header">
+      <div class="logo">
+        <img src="Taniti.png" alt="Tanitit logo">
+      </div>
+      <div class="spacer1"></div>
+      <div class="topnav">
+        <div class="links">
+          <a href="Taniti_GettingHere.html">Getting Here</a>
+          <a href="Taniti_Lodging.html">Lodging</a>
+          <a href="Taniti_Sightseeing.html">Sightseeing</a>
+          <a href="Taniti_Entertainment.html">Enternainment</a>
+          <a href="Taniti_FAQ.html">FAQ</a>
+          <a href="Taniti_Home.html">Home</a>
+        </div>
+        <div class="spacer2"></div>
+      </div>
+    </div>
+
+    <div class="image carousal">
+
+      <div class="mySlides fade">
+        <img src="Welcome Banner.png" alt="Welcome beach">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="To Banner.png" alt="To beach">
+      </div>
+
+      <div class="mySlides fade">
+        <img src="Paradise Banner.png" alt="Welcome beach">
+      </div>
+
+    </div>
+    <br>
+
+    <div style="text-align:center">
+      <span class="dot" onclick="currentSlide(1)"></span>
+      <span class="dot" onclick="currentSlide(2)"></span>
+      <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
+    <div class="about">
+      <h2>Entertainment</h2>
+      Most people visit Taniti to enjoy the beaches, explore the rainforest, and to visit the volcano. However, there are other things to do, including visiting a local history museum, going on chartered fishing tours, snorkeling, zip-lining in the rainforest, visiting several pubs, including a microbrewery, dancing at a new dance club, seeing a movie, taking helicopter rides, playing at an arcade, visiting art galleries, and bowling. Also, a nine-hole golf course should be operational by next year. Many of these activities are located in Merriton Landing, which is a rapidly developing area on the north side of Yellow Leaf Bay.  
+    </div>
+
+  </div>
+
+  <script>
+
+  let slideIndex = 1;
+  showSlides(slideIndex);
+
+  // Next/previous controls
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+
+  // Thumbnail image controls
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+
+  function showSlides(n) {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+
+  </script>
+
+
+</body>
+</html>
